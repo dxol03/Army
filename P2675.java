@@ -15,6 +15,8 @@ public class P2675 {
 
             char[] ch = S.toCharArray();
 
+            // j자리에 있는 ch배열을 R번 반복하여 프린트
+            
             for (int j = 0; j < S.length(); j++){
                 for (int u = 0; u < R; u++) {
                     System.out.print(ch[j]);
