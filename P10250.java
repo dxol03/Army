@@ -11,8 +11,6 @@ public class P10250 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
 
-        int floor = 0;
-        int num = 0;
         
         for (int i = 0; i < T; i++) {
                 StringTokenizer st = new StringTokenizer(br.readLine()," "); 
@@ -20,29 +18,19 @@ public class P10250 {
                 int W = Integer.parseInt(st.nextToken());
                 int N = Integer.parseInt(st.nextToken());
 
-                floor = (N%H);
-                num = ((N/H)+1);
+                int floor = (N%H);
+                int num = ((N/H)+1);
 
-                if (num < 10) {
-                    if ((floor == 0) && (N!=H)) {
-                        System.out.println(H+"0"+(num-1));
-                    }
-                        else if ((floor == 0) && (N==H)) {
-                            System.out.println(H+"0"+1);
-                        }
-                     else if (floor != 0) {
-                        System.out.println(floor+"0"+num);
-                    }  
-                } else if (num >= 10) {
-                    if ((floor == 0) && (N!=H)) {
-                        System.out.println(H+""+(num-1));
-                    }
-                        
-                     else if (floor != 0) {
-                        System.out.println(floor+""+num);
-                    }
-                } 
+                if (floor == 0) {
+                    floor = H*100;
+                    System.out.println(floor+(num-1));
+                } else {
+                    floor *= 100;
+                    System.out.println(floor+num);
+                }
 
+                
+                
                 
             }      
             
