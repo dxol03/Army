@@ -11,8 +11,11 @@ public class P8958 {
         
         for (int i = 0; i < n; i++) {
             String str = br.readLine();
+            int ct = 0;
             for (int j = 0; j < str.length(); j++) {
-                // 연속되면 for문으로 ++여러번 돌리기 
+                    if (str.charAt(i) == 'O') {
+
+                    }
                 
             }
             
