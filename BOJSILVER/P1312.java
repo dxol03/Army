@@ -11,8 +11,8 @@ public class P1312 {
         double b = Double.parseDouble(st.nextToken());
         int n = Integer.parseInt(st.nextToken());
 
-        double result = a%b;
-
+        double result = a % b;
+ 
         for (int i = 1; i < n; i++) {
             result *= 10;
             result %= b;
