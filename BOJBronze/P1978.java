@@ -10,35 +10,34 @@ public class P1978 {
         int[] arr = new int[N];
 
         int sum = 0;
-        int count = 0;
+        
 
         StringTokenizer st = new StringTokenizer(br.readLine()," ");
 
-        for (int i = 0; i < N; N++) {
-            arr[i] = Integer.parseInt(st.nextToken());    
-
-           
-
-            if (arr[i] == 1) {
-                sum += 0;
-            }
+        for (int i = 0; i < N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        
+            int count = 0;
 
             if (arr[i] == 2) {
-                sum += 1;
+                sum++;
             }
 
             for (int u = 2; u < arr[i]; u++) {
-                if (arr[i]%u != 0) {
-                    count = 1;
-                } else if (arr[i]%u == 0) {
+                if (arr[i]%u == 0) {
+                    count = 0;
                     break;
-                }
-                sum += count;
+                } else if (arr[i]%u != 0) {
+                    count = 1;
+                } 
             }
+            sum += count;
         }
-        System.out.println(sum);
-        
 
+
+        
+        
+        System.out.println(sum);
 
     }
 }
