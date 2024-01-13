@@ -15,12 +15,27 @@ public class P2798 {
 
         st = new StringTokenizer(br.readLine()," ");
 
-        long black = 0;
-
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        
+            int tmp = 0;
+
+        for (int i = 0; i < N; i++) {
+            for (int u = i+1; u < N; u++) {
+                for (int y = u+1; y < N; y++) {
+                    
+                    
+                    int sum = arr[i] + arr[u] + arr[y];
+                    
+                    if (tmp < sum && sum <= M) {
+                        tmp = sum;
+                    }
+                    
+
+                }
+            }
+        }
+        System.out.println(tmp);
     }
 }
