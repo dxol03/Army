@@ -12,6 +12,7 @@ public class P12605 {
 
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine()," ");
+
             while (st.hasMoreTokens()) {
                 stack.push(st.nextToken());
             }
