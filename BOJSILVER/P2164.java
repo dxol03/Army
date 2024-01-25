@@ -7,15 +7,13 @@ public class P2164 {
         Queue<Integer> queue = new LinkedList<Integer>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        for (int i = 2; i <= N; i++) {
+        for (int i = 1; i <= N; i++) {
             queue.add(i);
         }
-
-        while (queue.size() == 1) {
-            queue.remove();
-            int a = queue.remove();
-            queue.add(a);
+        while (queue.size() > 1) {
+            queue.poll();
+            queue.add(queue.poll());
         }
         System.out.println(queue.peek());
-    }
+}
 }
