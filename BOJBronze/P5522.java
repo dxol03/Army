@@ -1,4 +1,4 @@
-package BOJBronze;
+
 import java.util.Scanner;
 
 public class P5522 {
