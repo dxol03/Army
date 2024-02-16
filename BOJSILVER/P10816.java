@@ -12,6 +12,8 @@ public class P10816 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         
+        Arrays.sort(arr);
+
         int M = Integer.parseInt(br.readLine());
         StringTokenizer st1 = new StringTokenizer(br.readLine()," ");
         StringBuilder sb = new StringBuilder();
@@ -20,32 +22,34 @@ public class P10816 {
             sb.append(upperBound(arr,key)-lowerBound(arr,key)).append(' ');
         }
         System.out.println(sb);
-    }
-        static int lowerBound(int arr[], int key) {
-            int lo = 0;
-            int hi = arr.length;
 
-            while (lo < hi) {
-                int mid = (lo+hi)/2;
-                if (arr[mid] < key) {
-                    lo = mid +1;
-                } else {
-                    hi = mid;
-                }
-            }
-            return lo;
+        
         }
-        static int upperBound(int arr[], int key) {
+        static int lowerBound(int[] arr, int key) {
             int lo = 0;
             int hi = arr.length;
             while (lo < hi) {
                 int mid = (lo+hi)/2;
-                if (arr[mid] < key) {
-                    lo = mid +1;
-                } else {
-                    hi = mid;
-                }
+            if (key <= arr[mid]) {
+                hi = mid;
+            }else {
+                lo = mid + 1;
+            }
             }
             return lo;
         }
-    }
+        static int upperBound(int[] arr, int key) {
+            int lo = 0;
+            int hi = arr.length;
+            while (lo < hi) {
+                int mid = (lo+hi)/2;
+            if (key < arr[mid]) {
+                hi = mid;
+            }else {
+                lo = mid + 1;
+            }
+            }
+            return lo;
+        }
+    }   
+
